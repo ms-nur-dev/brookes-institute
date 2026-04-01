@@ -2,7 +2,19 @@
 
 	<div class="px-4 md:px-10 lg:px-14 mx-auto flex items-center justify-between">
 
-		
+		<div class="shrink-0 z-50">
+			<a href="{{ path('app_home') }}" class="flex items-center no-underline group">
+				<div class="relative w-15 h-17 flex items-center justify-center mr-4 transition-transform duration-300 group-hover:scale-105">
+					<img src="{{ asset('images/logo/logo.svg') }}" :class="scrolled ? 'opacity-0' : 'opacity-100'" style="filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));" class="absolute inset-0 w-full h-full object-contain transition-all duration-500" alt="Brookes Institute"/>
+					<img src="{{ asset('images/logo/logo.svg') }}" :class="scrolled ? 'opacity-100' : 'opacity-0'" class="absolute inset-0 w-full h-full object-contain transition-all duration-500" alt="Brookes Institute"/>
+				</div>
+
+				<div class="flex flex-col items-center ">
+					<span :class="scrolled ? 'text-primary' : 'text-white'" class="block font-serif text-2xl font-extrabold uppercase tracking-[0.075em]  transition-colors duration-300">Brookes</span>
+					<span :class="scrolled ? 'text-secondary' : 'text-secondary'" class="block font-sans text-sm tracking-[0.25em] uppercase font-bold  transition-colors duration-300">Institute</span>
+				</div>
+			</a>
+		</div>
 		
 	</div>
 </header>
