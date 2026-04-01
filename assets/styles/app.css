@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
-body {
-    background-color: skyblue;
+@import "tailwindcss";
+
+@theme {
+  /* Couleurs Sémantiques */
+  --color-primary: #002147;       /* color-oxford */
+  --color-primary-light: #0F5079; /* color-oxford-light Pour les survols (hover) */
+  --color-secondary: #C5A059;     /* color-heritage-gold  pour icônes/lignes */
+  --color-accent: #8C6A21;        /* color-heritage-gold-deep 'heritage-cta' pour les actions fortes */
+  --color-surface: #FDFCF5;       /* color-paper (fond du site) */
+
+  /* Typographies */
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Playfair Display", serif;
 }
