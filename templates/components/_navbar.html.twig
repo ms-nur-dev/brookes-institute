@@ -15,6 +15,11 @@
 				</div>
 			</a>
 		</div>
-		
+		<div class="hidden md:flex items-center space-x-10">
+			<a href="{{ path('app_home') }}" :class="scrolled ? 'text-primary hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">Accueil</a>
+			<a href="{{ path('app_home') }}" :class="scrolled ? 'text-primary/70 hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">À Propos</a>
+			<a href="{{ path('app_home') }}" :class="scrolled ? 'text-primary/70 hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">Formations</a>
+			<a href="{{ path('app_home') }}" :class="scrolled ? 'bg-secondary text-surface hover:bg-primary' : 'bg-secondary text-primary hover:bg-surface'" class="px-7 py-4 font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-all rounded-sm shadow-md hover:-translate-y-0.5">Contact</a>
+		</div>
 	</div>
 </header>
