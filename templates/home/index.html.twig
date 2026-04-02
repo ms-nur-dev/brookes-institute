@@ -2,20 +2,27 @@
 
 {% block body %}
 	<section class="relative w-full pt-[88px] h-screen flex flex-col items-center justify-center overflow-hidden bg-primary" x-data="{
-			            activeSlide: 0,
-			            slides: [
-			                '/images/home-hero/photo-oxford.jpg',
-			                '/images/home-hero/photo-aviation.jpg',
-			                '/images/home-hero/photo-hotel.jpg',
-			                '/images/home-hero/photo-conversation.jpg'
-			            ],
-			            init() {
-			                setInterval(() => {
-			                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
-			                }, 5000);
-			            }
-			         }">
+						            activeSlide: 0,
+						            slides: [
+						                '/images/home-hero/photo-oxford.jpg',
+						                '/images/home-hero/photo-aviation.jpg',
+						                '/images/home-hero/photo-hotel.jpg',
+						                '/images/home-hero/photo-conversation.jpg'
+						            ],
+						            init() {
+						                setInterval(() => {
+						                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+						                }, 5000);
+						            }
+						         }">
 
+		<div class="absolute inset-0 z-0">
+			<template x-for="(image, index) in slides" :key="index">
+				<img :src="image" :class="activeSlide === index ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'" class="absolute inset-0 w-full h-full object-cover object-[center_top] transition-all duration-1000 ease-in-out" alt="Brookes Institute"/>
+			</template>
+
+			<div class="absolute inset-0 bg-linear-to-b from-primary/70 to-primary/30 z-10"></div>
+		</div>
 	</section>
 
 
