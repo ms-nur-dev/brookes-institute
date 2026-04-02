@@ -1,0 +1,73 @@
+<footer class="bg-[#001835] pt-20 pb-10 border-t border-white/10">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            
+            <div class="lg:col-span-1">
+                <a href="{{ path('app_home') }}" class="flex items-center mb-6 no-underline">
+                    <img src="{{ asset('images/logo-blanc.png') }}" class="w-10 h-auto mr-3" alt="Brookes Institute Logo" />
+                    <div class="flex flex-col border-l border-white/20 pl-3">
+                        <span class="text-white font-serif text-xl font-bold leading-none uppercase tracking-tight">Brookes</span>
+                        <span class="text-secondary font-sans text-[9px] tracking-[0.35em] uppercase font-bold mt-1">Institute</span>
+                    </div>
+                </a>
+                <p class="font-sans text-sm text-white/60 leading-relaxed">
+                    L'excellence de la communication en anglais pour les professionnels exigeants et les acteurs de l'hôtellerie.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-sans text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Navigation</h4>
+                <ul class="space-y-4">
+                    <li><a href="{{ path('app_home') }}" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Accueil</a></li>
+                    <li><a href="#about" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Notre Expertise</a></li>
+                    <li><a href="#programmes" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Nos Programmes</a></li>
+                    <li><a href="#contact" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-sans text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Contact</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-secondary mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <a href="tel:+33683179487" class="font-sans text-sm text-white/60 hover:text-white transition-colors">06 83 17 94 87</a>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-secondary mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <a href="mailto:brookes.institute02@gmail.com" class="font-sans text-sm text-white/60 hover:text-white transition-colors">brookes.institute02@gmail.com</a>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-secondary mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span class="font-sans text-sm text-white/60">Paris / Île-de-France<br>Interventions sur site & Visio</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-sans text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Informations Légales</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Mentions Légales</a></li>
+                    <li><a href="#" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Conditions Générales de Vente</a></li>
+                    <li><a href="#" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Politique de Confidentialité</a></li>
+                    <li><a href="#" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Accessibilité & Handicap</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between">
+            <p class="font-sans text-xs text-white/40 mb-4 md:mb-0">
+                &copy; {{ 'now'|date('Y') }} Brookes Institute. Tous droits réservés.
+            </p>
+            
+            <div class="flex space-x-6">
+                <a href="#" class="text-white/40 hover:text-secondary transition-colors">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
