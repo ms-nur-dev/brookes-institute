@@ -2,19 +2,19 @@
 
 {% block body %}
 	<section class="relative w-full pt-[88px] h-screen flex flex-col items-center justify-center overflow-hidden bg-primary" x-data="{
-																																	            activeSlide: 0,
-																																	            slides: [
-																																	                '/images/home-hero/photo-oxford.jpg',
-																																	                '/images/home-hero/photo-aviation.jpg',
-																																	                '/images/home-hero/photo-hotel.jpg',
-																																	                '/images/home-hero/photo-conversation.jpg'
-																																	            ],
-																																	            init() {
-																																	                setInterval(() => {
-																																	                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
-																																	                }, 5000);
-																																	            }
-																																	         }">
+																																				            activeSlide: 0,
+																																				            slides: [
+																																				                '/images/home-hero/photo-oxford.jpg',
+																																				                '/images/home-hero/photo-aviation.jpg',
+																																				                '/images/home-hero/photo-hotel.jpg',
+																																				                '/images/home-hero/photo-conversation.jpg'
+																																				            ],
+																																				            init() {
+																																				                setInterval(() => {
+																																				                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+																																				                }, 5000);
+																																				            }
+																																				         }">
 
 		<div class="absolute inset-0 z-0">
 			<template x-for="(image, index) in slides" :key="index">
@@ -221,5 +221,70 @@
 		</div>
 	</section>
 
+	{# Section Témoignages #}
+	<section id="testimonials" class="py-24 bg-white border-t border-gray-100 overflow-hidden">
+		<div class="container mx-auto px-4 md:px-8 lg:px-12 text-center" x-data="{ shown: false }" x-intersect.once="shown = true">
+
+			<span :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'" class="text-secondary font-sans uppercase tracking-[0.2em] text-sm font-bold mb-4 block transition-all duration-700 ease-out">
+				Preuves de Réussite
+			</span>
+
+			<h2 :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'" class="font-serif text-4xl md:text-5xl text-primary font-bold mb-20 transition-all duration-700 delay-200 ease-out">
+				Ils ont franchi le cap.
+			</h2>
+
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto text-left">
+
+				<div :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'" class="group bg-surface p-10 rounded-sm relative transition-all duration-500 hover:shadow-xl hover:-translate-y-1 delay-300">
+					<svg class="absolute top-6 left-6 w-12 h-12 text-primary/5 transition-colors duration-500 group-hover:text-secondary/20" fill="currentColor" viewbox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+					<p class="font-sans text-gray-700 italic text-lg leading-relaxed relative z-10 mb-8 pt-4">"Grâce à la méthode d'Issa, j'ai enfin pu animer mes réunions avec mes partenaires londoniens sans aucune appréhension. Une approche vraiment axée sur le monde de l'entreprise."</p>
+					<div class="flex items-center">
+						<div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mr-4 border border-primary/10 font-serif text-primary font-bold text-sm">SL</div>
+						<div>
+							<p class="font-serif text-primary font-bold text-lg leading-tight">Sanjida N.</p>
+							<p class="font-sans text-[10px] uppercase tracking-widest text-secondary font-bold mt-1">Directrice Commerciale</p>
+						</div>
+					</div>
+				</div>
+
+				<div :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'" class="group bg-surface p-10 rounded-sm relative transition-all duration-500 hover:shadow-xl hover:-translate-y-1 delay-400">
+					<svg class="absolute top-6 left-6 w-12 h-12 text-primary/5 transition-colors duration-500 group-hover:text-secondary/20" fill="currentColor" viewbox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+					<p class="font-sans text-gray-700 italic text-lg leading-relaxed relative z-10 mb-8 pt-4">"Dans l'hôtellerie de luxe, chaque mot compte. Cet accompagnement m'a permis de retrouver une élégance dans mes échanges avec la clientèle internationale."</p>
+					<div class="flex items-center">
+						<div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mr-4 border border-primary/10 font-serif text-primary font-bold text-sm">MD</div>
+						<div>
+							<p class="font-serif text-primary font-bold text-lg leading-tight">Issa S.</p>
+							<p class="font-sans text-[10px] uppercase tracking-widest text-secondary font-bold mt-1">General Manager, Hospitality</p>
+						</div>
+					</div>
+				</div>
+
+				<div :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'" class="group bg-surface p-10 rounded-sm relative transition-all duration-500 hover:shadow-xl hover:-translate-y-1 delay-500">
+					<svg class="absolute top-6 left-6 w-12 h-12 text-primary/5 transition-colors duration-500 group-hover:text-secondary/20" fill="currentColor" viewbox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+					<p class="font-sans text-gray-700 italic text-lg leading-relaxed relative z-10 mb-8 pt-4">"Le mentoring m'a permis de préparer une présentation cruciale pour mon siège à New York. Sa compréhension des codes anglo-saxons a fait toute la différence."</p>
+					<div class="flex items-center">
+						<div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mr-4 border border-primary/10 font-serif text-primary font-bold text-sm">JP</div>
+						<div>
+							<p class="font-serif text-primary font-bold text-lg leading-tight">Younes S.</p>
+							<p class="font-sans text-[10px] uppercase tracking-widest text-secondary font-bold mt-1">VP Operations</p>
+						</div>
+					</div>
+				</div>
+
+				<div :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'" class="group bg-surface p-10 rounded-sm relative transition-all duration-500 hover:shadow-xl hover:-translate-y-1 delay-600">
+					<svg class="absolute top-6 left-6 w-12 h-12 text-primary/5 transition-colors duration-500 group-hover:text-secondary/20" fill="currentColor" viewbox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+					<p class="font-sans text-gray-700 italic text-lg leading-relaxed relative z-10 mb-8 pt-4">"Une formation d'une précision rare. On sent l'expertise de terrain d'Issa sur les standards internationaux. Ma fluidité s'est transformée en quelques sessions."</p>
+					<div class="flex items-center">
+						<div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mr-4 border border-primary/10 font-serif text-primary font-bold text-sm">AV</div>
+						<div>
+							<p class="font-serif text-primary font-bold text-lg leading-tight">Moti N.</p>
+							<p class="font-sans text-[10px] uppercase tracking-widest text-secondary font-bold mt-1">Personnel Navigant Technique</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
 
 {% endblock %}
