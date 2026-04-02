@@ -2,19 +2,19 @@
 
 {% block body %}
 	<section class="relative w-full pt-[88px] h-screen flex flex-col items-center justify-center overflow-hidden bg-primary" x-data="{
-																																				            activeSlide: 0,
-																																				            slides: [
-																																				                '/images/home-hero/photo-oxford.jpg',
-																																				                '/images/home-hero/photo-aviation.jpg',
-																																				                '/images/home-hero/photo-hotel.jpg',
-																																				                '/images/home-hero/photo-conversation.jpg'
-																																				            ],
-																																				            init() {
-																																				                setInterval(() => {
-																																				                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
-																																				                }, 5000);
-																																				            }
-																																				         }">
+																																							            activeSlide: 0,
+																																							            slides: [
+																																							                '/images/home-hero/photo-oxford.jpg',
+																																							                '/images/home-hero/photo-aviation.jpg',
+																																							                '/images/home-hero/photo-hotel.jpg',
+																																							                '/images/home-hero/photo-conversation.jpg'
+																																							            ],
+																																							            init() {
+																																							                setInterval(() => {
+																																							                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+																																							                }, 5000);
+																																							            }
+																																							         }">
 
 		<div class="absolute inset-0 z-0">
 			<template x-for="(image, index) in slides" :key="index">
@@ -286,5 +286,206 @@
 			</div>
 		</div>
 	</section>
+	{# FAQ #}
+	<section class="py-24 bg-surface" x-data="{ active: null }">
+		<div class="container mx-auto px-4 md:px-8 lg:px-12 max-w-4xl">
 
+			<div class="text-center mb-16" x-data="{ shown: false }" x-intersect.once="shown = true">
+				<span :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'" class="text-secondary font-sans uppercase tracking-[0.2em] text-sm font-bold mb-4 block transition-all duration-700">FAQ</span>
+				<h2 :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'" class="font-serif text-3xl md:text-5xl text-primary font-bold transition-all duration-700 delay-200">Réponses à vos questions</h2>
+			</div>
+
+			<div
+				class="space-y-3">
+
+				{# --- QUESTION 1 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 1 ? null : 1" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 1 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">Où se déroulent les formations ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 1 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 1" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							Nous nous adaptons à vos contraintes professionnelles. Les sessions se déroulent soit en
+							<strong>visio-conférence</strong>
+							(Teams, Zoom, Google Meet) pour une flexibilité totale, soit en
+							<strong>présentiel</strong>
+							directement dans vos bureaux.
+						</div>
+					</div>
+				</div>
+
+				{# --- QUESTION 2 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 2 ? null : 2" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 2 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">Est-ce éligible au CPF ou autre financements ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 2 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 2" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							Brookes Institute est un organisme de formation en pleine croissance. Nous vous accompagnons dans le montage de vos dossiers de prise en charge auprès de vos
+							<strong>OPCO</strong>. Pour le CPF, nous pourrons vous orienter lors du diagnostic gratuit selon l'évolution de nos certifications.
+						</div>
+					</div>
+				</div>
+
+				{# --- QUESTION 3 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 3 ? null : 3" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 3 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">Quel est le niveau requis pour s'inscrire ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 3 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 3" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							Nos formations sont ouvertes à **tous les niveaux**, du débutant complet à l'apprenant avancé. Quelle que soit votre base actuelle, notre méthode est spécifiquement conçue pour **débloquer votre expression orale** et vous donner l'assurance nécessaire pour échanger avec fluidité. Un audit personnalisé nous permettra de définir le parcours idéal pour atteindre vos objectifs.
+						</div>
+					</div>
+				</div>
+
+				{# --- QUESTION 4 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 4 ? null : 4" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 4 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">Combien de temps dure une formation type ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 4 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 4" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							Tout dépend de vos objectifs. Nos parcours varient généralement de
+							<strong>20h à 40h</strong>
+							de face-à-face pédagogique, réparties sur plusieurs semaines pour garantir une mémorisation optimale et une mise en pratique réelle entre les sessions.
+						</div>
+					</div>
+				</div>
+
+				{# --- QUESTION 5 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 5 ? null : 5" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 5 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">En quoi consiste le "Diagnostic gratuit" ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 5 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 5" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							C'est un échange de 15-20 minutes en anglais et français. Il me permet d'évaluer votre aisance orale, d'identifier vos "points de douleur" (ex: peur de prendre la parole en réunion) et de vous proposer un programme sur-mesure.
+						</div>
+					</div>
+				</div>
+
+				{# --- QUESTION 6 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 6 ? null : 6" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 6 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">Puis-je annuler ou décaler une session ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 6 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 6" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							Nous connaissons les impératifs des cadres et dirigeants. Une session peut être décalée sans frais jusqu'à
+							<strong>24h à l'avance</strong>. Cela permet de maintenir une continuité pédagogique sans stresser votre agenda.
+						</div>
+					</div>
+				</div>
+
+				{# --- QUESTION 7 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 7 ? null : 7" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 7 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">Proposez-vous des cours de groupe ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 7 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 7" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							Brookes Institute privilégie l'efficacité du 1-to-1 ou des très petits groupes (3-4 personnes max) au sein d'une même entreprise, afin de garantir un temps de parole maximal pour chaque apprenant.
+						</div>
+					</div>
+				</div>
+
+				{# --- QUESTION 8 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 8 ? null : 8" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 8 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">Comment suivez-vous ma progression ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 8 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 8" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							À chaque étape, nous validons des compétences concrètes (ex: savoir mener une négociation). Un rapport de progression vous est remis à mi-parcours et en fin de formation pour mesurer le chemin parcouru.
+						</div>
+					</div>
+				</div>
+
+				{# --- QUESTION 9 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 9 ? null : 9" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 9 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">Est-ce que je vais apprendre l'anglais britannique ou américain ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 9 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 9" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							Mon parcours à
+							<strong>Oxford</strong>
+							m'a donné une expertise en anglais britannique "International", le standard des affaires en Europe. Cependant, nous intégrons les nuances américaines si votre activité est tournée vers les USA.
+						</div>
+					</div>
+				</div>
+
+				{# --- QUESTION 10 --- #}
+				<div class="bg-white border border-primary/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-secondary/30 shadow-sm">
+					<button @click="active = active === 10 ? null : 10" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none group">
+						<span class="font-serif font-bold text-lg transition-colors duration-300" :class="active === 10 ? 'text-secondary' : 'text-primary group-hover:text-secondary'">Allez-vous me donner des devoirs entre les séances ?</span>
+						<div class="shrink-0 ml-4">
+							<svg :class="active === 10 ? 'rotate-180 text-secondary' : 'text-primary/30'" class="w-6 h-6 transform transition-transform duration-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</div>
+					</button>
+					<div x-show="active === 10" x-collapse>
+						<div class="px-6 pb-6 font-sans text-gray-600 text-base leading-relaxed border-t border-gray-50 pt-4">
+							Pas de "devoirs" scolaires. Je vous donne des
+							<strong>"missions de terrain"</strong>
+							: écouter un podcast spécifique, préparer un point précis de votre prochaine réunion, ou utiliser 3 nouvelles expressions clés dans vos emails du lendemain.
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="mt-16 text-center">
+				<p class="font-sans text-gray-500 text-sm mb-6">Vous avez une autre question ?</p>
+				<a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white px-10 py-4 font-sans font-bold uppercase tracking-widest transition-all duration-300 shadow-lg rounded-sm text-xs">Poser ma question</a>
+			</div>
+		</div>
+	</section>
 {% endblock %}
