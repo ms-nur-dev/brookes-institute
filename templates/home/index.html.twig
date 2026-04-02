@@ -23,6 +23,34 @@
 
 			<div class="absolute inset-0 bg-linear-to-b from-primary/70 to-primary/30 z-10"></div>
 		</div>
+        <div class=" mx-auto px-4 md:px-8 lg:px-12 relative z-30 text-center flex flex-col items-center">
+			<div x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 300)" class=" flex flex-col items-center">
+
+
+				<h1 :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'" class="font-sans text-3xl md:text-4xl lg:text-5xl text-surface/80 font-bold mb-2 transition-all uppercase duration-1000 delay-200 ease-out leading-tight ">
+					L’art de la conversation,
+				</h1>
+
+				<h2 :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'" class="font-sans text-3xl md:text-4xl lg:text-5xl text-surface/60 font-bold mb-3 uppercase transition-all duration-1000 delay-400 ease-out leading-tight ">
+					L'excellence de vos échanges.
+				</h2>
+
+				<p :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'" class="font-sans text-lg md:text-xl text-secondary font-medium mb-10 transition-all duration-1000 delay-600 ease-out max-w-2xl">
+					Apprenez l'anglais autrement : vivant, accessible, épanouissant.
+				</p>
+
+				<div :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'" class="flex flex-col sm:flex-row justify-center gap-4 transition-all duration-1000 delay-800 ease-out">
+					<a href="#programmes" class="bg-accent hover:bg-secondary text-surface px-8 py-4 text-center font-sans font-bold uppercase tracking-widest transition-colors duration-300 shadow-lg rounded-sm text-[11px]">
+						Découvrez nos cours
+					</a>
+					<a href="#contact" class="border border-white/50 text-white hover:bg-white hover:text-primary px-8 py-4 text-center font-sans font-bold uppercase tracking-widest transition-colors duration-300 rounded-sm text-[11px] backdrop-blur-sm">
+						Contact
+					</a>
+				</div>
+			</div>
+		</div>
+
+        
 	</section>
 
 
