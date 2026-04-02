@@ -18,7 +18,7 @@
 
 		<div class="hidden md:flex items-center space-x-8 xl:space-x-10">
 			<a href="{{ path('app_home') }}" :class="scrolled ? 'text-primary hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">Accueil</a>
-			<a href="{{ path('app_home') }}" :class="scrolled ? 'text-primary/70 hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">À Propos</a>
+			<a href="{{ path('app_about') }}" :class="scrolled ? 'text-primary/70 hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">À Propos</a>
 			<a href="{{ path('app_home') }}" :class="scrolled ? 'text-primary/70 hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">Formations</a>
 			<a href="{{ path('app_home') }}" :class="scrolled ? 'bg-secondary text-surface hover:bg-primary' : 'bg-secondary text-primary hover:bg-surface'" class="px-7 py-3 font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-all rounded-sm shadow-md hover:-translate-y-0.5">Contact</a>
 		</div>
@@ -33,7 +33,7 @@
 		<div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="fixed inset-0 bg-primary z-40 flex flex-col items-center justify-start pt-32 space-y-6 md:hidden" style="display: none;">
 
 			<a @click="mobileMenuOpen = false" href="{{ path('app_home') }}" class="text-surface text-sm font-sans uppercase tracking-[0.2em] hover:text-secondary transition-colors duration-200">Accueil</a>
-			<a @click="mobileMenuOpen = false" href="#about" class="text-surface text-sm font-sans uppercase tracking-[0.2em] hover:text-secondary transition-colors duration-300">À Propos</a>
+			<a @click="mobileMenuOpen = false" href="{{ path('app_about') }}" class="text-surface text-sm font-sans uppercase tracking-[0.2em] hover:text-secondary transition-colors duration-300">À Propos</a>
 			<a @click="mobileMenuOpen = false" href="#programmes" class="text-surface text-sm font-sans uppercase tracking-[0.2em] hover:text-secondary transition-colors duration-300">Formations</a>
 
 			<a @click="mobileMenuOpen = false" href="#contact" class="bg-secondary text-primary hover:bg-surface px-8 py-3 mt-2 font-sans text-xs font-bold uppercase tracking-[0.2em] rounded-sm transition-colors duration-300">Contact</a>
