@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import "tailwindcss";
-
 @theme {
   /* Couleurs Sémantiques */
   --color-primary: #002147;       /* color-oxford */
