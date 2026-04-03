@@ -8,11 +8,109 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class CoursesController extends AbstractController
 {
-    #[Route('/courses', name: 'app_courses')]
+    #[Route('/formations', name: 'app_courses')]
     public function index(): Response
     {
-        return $this->render('courses/index.html.twig', [
-            'controller_name' => 'CoursesController',
+        return $this->render('courses/index.html.twig');
+    }
+
+    #[Route('/formations/{slug}', name: 'app_course_show')]
+    public function show(string $slug): Response
+    {
+        
+        $commonPublic = 'Professionnels, demandeurs d\'emploi, étudiants ou toute personne souhaitant un perfectionnement ciblé en anglais dans un cadre professionnel et/ou certifiant.';
+        $commonModalites = 'Mixte (présentiel et distanciel). Supports de cours structurés (PDF, PPT). Méthodes actives (jeux de rôle, simulations) et outils interactifs (Google Meet, tableaux blancs).';
+        $commonEvaluation = 'Évaluations formatives continues (quiz, retours formateur) et évaluation sommative en fin de parcours via un livrable écrit et/ou une épreuve orale.';
+
+        $courses = [
+            // ==========================================
+            // FORMULE FULL (60H)
+            // ==========================================
+            'full' => [
+                'ref' => 'ANG-FULL-0060',
+                'title' => 'Formule Full',
+                'hours' => 60,
+                'price' => 4200,
+                'description' => 'Acquérir une maîtrise fluide et stratégique de l’anglais professionnel. Être autonome dans toutes les situations, se préparer à des tests de haut niveau et développer des compétences de leadership.',
+                'public' => $commonPublic . ' Niveau A1/A2 minimum conseillé.',
+                'modalites' => $commonModalites,
+                'evaluation' => $commonEvaluation,
+                'modules' => [
+                    [
+                        'id' => 1,
+                        'title' => 'Module 1 : Bilan de compétences linguistiques & parcours',
+                        'duration' => '2h',
+                        'objectives' => 'Déterminer avec précision le niveau CECRL, cibler les axes de progression et élaborer un plan individualisé.',
+                        'chapters' => ['Chapitre 1. Test oral et écrit détaillé', 'Chapitre 2. Analyse des usages professionnels', 'Chapitre 3. Entretien pédagogique personnalisé'],
+                        'modalites' => 'Ateliers pratiques, correction personnalisée, coaching.'
+                    ],
+                    [
+                        'id' => 2,
+                        'title' => 'Module 2 : Grammaire avancée & précision linguistique',
+                        'duration' => '6h',
+                        'objectives' => 'Renforcer la correction grammaticale et syntaxique. Éviter les anglicismes et erreurs classiques.',
+                        'chapters' => ['Chapitre 1. Structures complexes', 'Chapitre 2. Phrasal verbs', 'Chapitre 3. Discours indirect, style indirect', 'Chapitre 4. Exercices ciblés + correction fine'],
+                        'modalites' => 'Ateliers pratiques, correction personnalisée, coaching.'
+                    ],
+                    [
+                        'id' => 3,
+                        'title' => 'Module 3 : Expression orale et prise de parole en public',
+                        'duration' => '10h',
+                        'objectives' => 'Améliorer l\'aisance, l’intonation et la persuasion. S’exprimer avec clarté en contexte formel et informel.',
+                        'chapters' => ['Chapitre 1. Présentations professionnelles', 'Chapitre 2. Pitch et animation de réunion', 'Chapitre 3. Storytelling', 'Chapitre 4. Coaching vocal et body language'],
+                        'modalites' => 'Ateliers pratiques, correction personnalisée, coaching.'
+                    ],
+                    [
+                        'id' => 4,
+                        'title' => 'Module 4 : Compréhension & traitement de documents authentiques',
+                        'duration' => '8h',
+                        'objectives' => 'Comprendre des documents exigeants. Savoir reformuler, extraire et synthétiser.',
+                        'chapters' => ['Chapitre 1. Articles spécialisés', 'Chapitre 2. Rapports', 'Chapitre 3. Vidéos longues, podcasts', 'Chapitre 4. Exercices de reformulation et d’analyse'],
+                        'modalites' => 'Ateliers pratiques, correction personnalisée, coaching.'
+                    ],
+                    [
+                        'id' => 5,
+                        'title' => 'Module 5 : Anglais des affaires & correspondance professionnelle',
+                        'duration' => '8h',
+                        'objectives' => 'Rédiger des documents professionnels efficaces. Gérer des échanges professionnels à l’écrit.',
+                        'chapters' => ['Chapitre 1. E-mails', 'Chapitre 2. Propositions', 'Chapitre 3. Bilans', 'Chapitre 4. Lettres de motivation', 'Chapitre 5. Ton professionnel, diplomatie, persuasion'],
+                        'modalites' => 'Ateliers pratiques, correction personnalisée, coaching.'
+                    ],
+                    [
+                        'id' => 6,
+                        'title' => 'Module 6 : Interactions interculturelles & leadership international',
+                        'duration' => '6h',
+                        'objectives' => 'Adapter son style de communication selon les cultures. Développer un leadership interculturel.',
+                        'chapters' => ['Chapitre 1. Prise de décision', 'Chapitre 2. Gestion d’équipe', 'Chapitre 3. Feedback', 'Chapitre 4. Études de cas réels et jeux de rôle'],
+                        'modalites' => 'Ateliers pratiques, correction personnalisée, coaching.'
+                    ],
+                    [
+                        'id' => 7,
+                        'title' => 'Module 7 : Préparation aux certifications & entretiens',
+                        'duration' => '6h',
+                        'objectives' => 'Réussir un test de haut niveau (C1-C2 ou pro). Réussir un entretien RH ou technique en anglais.',
+                        'chapters' => ['Chapitre 1. TOEIC, TOEFL, IELTS, Linguaskill – stratégie et pratique', 'Chapitre 2. Simulations d’entretien complexe'],
+                        'modalites' => 'Ateliers pratiques, correction personnalisée, coaching.'
+                    ],
+                    [
+                        'id' => 8,
+                        'title' => 'Module 8 : Consolidation & pratique immersive',
+                        'duration' => '14h',
+                        'objectives' => 'Réutiliser tous les acquis dans un contexte réaliste. Travailler la spontanéité et l’endurance linguistique.',
+                        'chapters' => ['Chapitre 1. Discussions approfondies', 'Chapitre 2. Débats', 'Chapitre 3. Projets collaboratifs', 'Chapitre 4. Présentation finale', 'Chapitre 5. Coaching individuel'],
+                        'modalites' => 'Ateliers pratiques, correction personnalisée, coaching.'
+                    ]
+                ]
+            ],
+
+
+        // Vérifie si la formation demandée existe dans l'URL
+        if (!array_key_exists($slug, $courses)) {
+            throw $this->createNotFoundException('Cette formation n\'existe pas au catalogue.');
+        }
+
+        return $this->render('courses/show.html.twig', [
+            'course' => $courses[$slug],
         ]);
     }
 }

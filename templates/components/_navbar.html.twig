@@ -20,7 +20,7 @@
 			<a href="{{ path('app_home') }}" :class="scrolled ? 'text-primary hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">Accueil</a>
 			<a href="{{ path('app_about') }}" :class="scrolled ? 'text-primary/70 hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">À Propos</a>
 			<a href="{{ path('app_courses') }}" :class="scrolled ? 'text-primary/70 hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">Formations</a>
-			<a href="{{ path('app_home') }}" :class="scrolled ? 'bg-secondary text-surface hover:bg-primary' : 'bg-secondary text-primary hover:bg-surface'" class="px-7 py-3 font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-all rounded-sm shadow-md hover:-translate-y-0.5">Contact</a>
+			<a href="{{ path('app_home') }}" :class="scrolled ? 'bg-primary text-surface hover:bg-secondary' : 'bg-secondary text-primary hover:bg-surface'" class="px-7 py-3 font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-all rounded-sm shadow-md hover:-translate-y-0.5">Contact</a>
 		</div>
 
 		<button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden z-50 p-2 focus:outline-none bg-transparent" :class="(!scrolled || mobileMenuOpen) ? 'text-surface' : 'text-primary'">
