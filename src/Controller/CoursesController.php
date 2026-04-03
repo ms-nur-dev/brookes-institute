@@ -349,7 +349,6 @@ final class CoursesController extends AbstractController
     #[Route('/formations', name: 'app_courses')]
     public function index(): Response
     {
-        // Envoi des données au template de la page listant les formations
         return $this->render('courses/index.html.twig', [
             'courses' => $this->getCoursesData()
         ]);
@@ -360,7 +359,6 @@ final class CoursesController extends AbstractController
     {
         $courses = $this->getCoursesData();
 
-        // Vérifie si la formation demandée existe dans l'URL
         if (!array_key_exists($slug, $courses)) {
             throw $this->createNotFoundException('Cette formation n\'existe pas au catalogue.');
         }

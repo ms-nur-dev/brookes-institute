@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Formations - Brookes Institute{% endblock %}
+
+{% block body %}
+<section class="pt-40 pb-24 bg-surface relative overflow-hidden">
+    <div class="absolute inset-0 z-0" style="background-image: radial-gradient(var(--color-primary) 0.5px, transparent 0.5px); background-size: 32px 32px; opacity: 0.03;"></div>
+
+    <div class="container mx-auto px-4 md:px-8 lg:px-12 text-center max-w-4xl relative z-10" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+        <span :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'" class="text-secondary font-sans uppercase tracking-[0.2em] text-sm font-bold mb-4 block transition-all duration-700 ease-out">
+            Catalogue
+        </span>
+        <h1 :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'" class="font-serif text-4xl md:text-5xl lg:text-6xl text-primary font-bold mb-6 transition-all duration-700 delay-200 ease-out leading-tight">
+            Choisissez votre niveau <br>d'exigence.
+        </h1>
+        <p :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'" class="font-sans text-lg text-gray-600 mb-20 transition-all duration-700 delay-300 ease-out">
+            Des programmes intensifs de 20h à 60h, conçus pour débloquer votre oral et affirmer votre leadership à l'international.
+        </p>
+    </div>
+
+    <div class="container mx-auto px-4 md:px-8 lg:px-8 max-w-[1400px] relative z-10" x-data="{ shown: false }" x-intersect.once="shown = true">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 xl:gap-4 items-end">
+            
+            {% for slug, course in courses %}
+                
+                {% set isHighlighted = (slug == 'midway') %}
+                {# On calcule le délai dynamiquement (100ms, 200ms, 300ms...) #}
+                {% set delay = loop.index * 100 %}
+
+                <div :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'" 
+                     class="group flex flex-col h-full transition-all duration-500 delay-[{{ delay }}ms]
+                            {{ isHighlighted 
+                                ? 'bg-gradient-to-b from-primary to-[#0a1a2f] text-white border border-primary-light p-8 rounded-sm hover:shadow-2xl relative transform xl:-translate-y-6 shadow-xl z-10' 
+                                : 'bg-white border border-primary/10 p-8 rounded-sm hover:shadow-xl hover:-translate-y-1' 
+                            }}">
+                    
+                    {% if isHighlighted %}
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-secondary text-white px-5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm shadow-md whitespace-nowrap">
+                            Le plus demandé
+                        </div>
+                    {% endif %}
+
+                    <h3 class="font-serif text-2xl font-bold mb-2 {{ isHighlighted ? 'text-white mt-4' : 'text-primary' }}">
+                        {{ course.title }}
+                    </h3>
+                    <p class="font-sans text-secondary font-bold text-sm uppercase tracking-widest mb-6">
+                        {{ course.hours }} Heures
+                    </p>
+                    <div class="text-3xl font-bold mb-6 {{ isHighlighted ? 'text-white' : 'text-primary' }}">
+                        {{ course.price }}€
+                    </div>
+                    
+                    <ul class="font-sans text-sm space-y-3 mb-10 flex-grow {{ isHighlighted ? 'text-white/80' : 'text-gray-600' }}">
+                        {% for feature in course.features %}
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-secondary mt-1 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 
+                                {{ feature }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <a href="{{ path('app_course_show', { slug: slug }) }}" 
+                       class="w-full block text-center py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 rounded-sm 
+                              {{ isHighlighted 
+                                  ? 'bg-secondary hover:bg-white hover:text-primary text-white shadow-lg' 
+                                  : 'border border-primary text-primary hover:bg-secondary hover:text-white hover:border-secondary' 
+                              }}">
+                        Voir le détail
+                    </a>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+{% endblock %}
