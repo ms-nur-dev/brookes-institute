@@ -184,6 +184,70 @@ final class CoursesController extends AbstractController
                 ]
             ],
 
+        // ==========================================
+            // FORMULE MIDWAY (40H)
+            // ==========================================
+            'midway' => [
+                'ref' => 'ANG-MIDWAY-0040',
+                'title' => 'Formule Midway',
+                'hours' => 40,
+                'price' => 2800,
+                'description' => 'Le compromis parfait pour développer des compétences linguistiques solides, maîtriser les codes culturels et réussir un test de certification.',
+                'public' => $commonPublic . ' Niveau B1 minimum conseillé.',
+                'modalites' => $commonModalites,
+                'evaluation' => $commonEvaluation,
+                'modules' => [
+                    [
+                        'id' => 1,
+                        'title' => 'Module 1 : Diagnostic et objectifs personnalisés',
+                        'duration' => '2h',
+                        'objectives' => 'Identifier le niveau réel et définir un parcours de formation individualisé et progressif.',
+                        'chapters' => ['Chapitre 1. Test de positionnement oral et écrit', 'Chapitre 2. Auto-évaluation commentée', 'Chapitre 3. Entretien pédagogique individuel', 'Chapitre 4. Élaboration d’un plan d’apprentissage personnalisé'],
+                        'modalites' => 'Test écrit + entretien oral + restitution individualisée.'
+                    ],
+                    [
+                        'id' => 2,
+                        'title' => 'Module 2 : Consolidation des bases et structures complexes',
+                        'duration' => '8h',
+                        'objectives' => 'Réviser les bases grammaticales et approfondir les structures de l’anglais professionnel.',
+                        'chapters' => ['Chapitre 1. Révisions ciblées (temps, modaux, passif)', 'Chapitre 2. Grammaire avancée (subjonctif, discours rapporté)', 'Chapitre 3. Vocabulaire spécialisé (business, technique, finance)'],
+                        'modalites' => 'Exercices pratiques, quiz interactifs, ateliers corrigés.'
+                    ],
+                    [
+                        'id' => 3,
+                        'title' => 'Module 3 : Communication écrite et orale',
+                        'duration' => '10h',
+                        'objectives' => 'Développer sa fluidité et sa précision. Produire des écrits professionnels adaptés.',
+                        'chapters' => ['Chapitre 1. Expression orale : réunions, négociations, présentations', 'Chapitre 2. Compréhension orale : conférences, podcasts', 'Chapitre 3. Rédaction : rapports, synthèses, emails stratégiques'],
+                        'modalites' => 'Simulations, documents authentiques, corrections personnalisées.'
+                    ],
+                    [
+                        'id' => 4,
+                        'title' => 'Module 4 : Contexte culturel et inter culturel',
+                        'duration' => '6h',
+                        'objectives' => 'Comprendre les codes culturels internationaux et gérer les situations sensibles.',
+                        'chapters' => ['Chapitre 1. Décryptage des comportements culturels en entreprise', 'Chapitre 2. Conversation informelle et registre adapté', 'Chapitre 3. Do’s & Don’ts dans les contextes internationaux'],
+                        'modalites' => 'Études de cas, jeux de rôle, analyse de situations réelles.'
+                    ],
+                    [
+                        'id' => 5,
+                        'title' => 'Module 5 : Mise en situation intensive & correction',
+                        'duration' => '8h',
+                        'objectives' => 'Renforcer les acquis par des simulations intensives et corriger les erreurs récurrentes.',
+                        'chapters' => ['Chapitre 1. Simulations métiers (entretiens, réunions, négociations)', 'Chapitre 2. Feedback ciblé sur erreurs fréquentes', 'Chapitre 3. Stratégies de communication efficace'],
+                        'modalites' => 'Jeux de rôle, mises en pratique, feedback individualisé.'
+                    ],
+                    [
+                        'id' => 6,
+                        'title' => 'Module 6 : Objectif réussite test / certification',
+                        'duration' => '6h',
+                        'objectives' => 'Préparer efficacement un test officiel (TOEIC, TOEFL...) et optimiser ses stratégies.',
+                        'chapters' => ['Chapitre 1. Entraînement ciblé selon le test choisi', 'Chapitre 2. Simulation d’entretien professionnel en anglais', 'Chapitre 3. Test blanc et analyse détaillée des résultats'],
+                        'modalites' => 'Tests blancs, mises en situation d’entretien, feedback personnalisé.'
+                    ]
+                ]
+            ],
+
         // Vérifie si la formation demandée existe dans l'URL
         if (!array_key_exists($slug, $courses)) {
             throw $this->createNotFoundException('Cette formation n\'existe pas au catalogue.');
