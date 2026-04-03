@@ -2,19 +2,19 @@
 
 {% block body %}
 	<section class="relative w-full pt-[88px] h-screen flex flex-col items-center justify-center overflow-hidden bg-primary" x-data="{
-																																																			            activeSlide: 0,
-																																																			            slides: [
-																																																			                '/images/home-hero/photo-oxford.jpg',
-																																																			                '/images/home-hero/photo-aviation.jpg',
-																																																			                '/images/home-hero/photo-hotel.jpg',
-																																																			                '/images/home-hero/photo-conversation.jpg'
-																																																			            ],
-																																																			            init() {
-																																																			                setInterval(() => {
-																																																			                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
-																																																			                }, 5000);
-																																																			            }
-																																																			         }">
+																																																						            activeSlide: 0,
+																																																						            slides: [
+																																																						                '/images/home-hero/photo-oxford.jpg',
+																																																						                '/images/home-hero/photo-aviation.jpg',
+																																																						                '/images/home-hero/photo-hotel.jpg',
+																																																						                '/images/home-hero/photo-conversation.jpg'
+																																																						            ],
+																																																						            init() {
+																																																						                setInterval(() => {
+																																																						                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+																																																						                }, 5000);
+																																																						            }
+																																																						         }">
 
 		<div class="absolute inset-0 z-0">
 			<template x-for="(image, index) in slides" :key="index">
@@ -530,15 +530,17 @@
 							</a>
 						</div>
 					</div>
+					<div class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary/80"></div>
+
 				</div>
 
 				<div class="lg:w-2/5 relative min-h-[300px] lg:min-h-full overflow-hidden" :class="shown ? 'opacity-100 scale-100' : 'opacity-0 scale-105'" class="transition-all duration-1000 delay-300 ease-out">
 
 					<img src="{{ asset('images/profile/profile-3.jpg') }}" class="absolute inset-0 w-full h-full object-cover" alt="Diagnostic Brookes Institute">
 
-					<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+					<div class="absolute inset-0 bg-secondary mix-blend-multiply"></div>
 
-					<div class="absolute bottom-0 left-0 w-full h-1.5 bg-primary"></div>
+					<div class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary/80"></div>
 				</div>
 
 			</div>
