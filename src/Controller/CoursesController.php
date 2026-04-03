@@ -104,6 +104,86 @@ final class CoursesController extends AbstractController
             ],
 
 
+            // ==========================================
+            // FORMULE PERFORMER (50H)
+            // ==========================================
+            'performer' => [
+                'ref' => 'ANG-PERFORMER-OO50',
+                'title' => 'Formule Performer',
+                'hours' => 50,
+                'price' => 3600,
+                'description' => 'Développer des compétences linguistiques solides et autonomes. Maîtriser les codes linguistiques et culturels de l’anglais des affaires.',
+                'public' => $commonPublic . ' Niveau A1/A2 minimum conseillé.',
+                'modalites' => $commonModalites,
+                'evaluation' => $commonEvaluation,
+                'modules' => [
+                    [
+                        'id' => 1,
+                        'title' => 'Module 1 : Diagnostic & Objectifs personnalisés',
+                        'duration' => '1h',
+                        'objectives' => 'Identifier le niveau réel du stagiaire (CECRL) et définir un parcours individualisé.',
+                        'chapters' => ['Chapitre 1. Test de positionnement (oral & écrit)', 'Chapitre 2. Auto-évaluation commentée', 'Chapitre 3. Entretien pédagogique', 'Chapitre 4. Élaboration d’un plan d’apprentissage'],
+                        'modalites' => 'Test écrit, entretien oral, restitution individualisée.'
+                    ],
+                    [
+                        'id' => 2,
+                        'title' => 'Module 2 : Renforcement grammatical et lexical ciblé',
+                        'duration' => '6h',
+                        'objectives' => 'Consolider les bases grammaticales avancées. Maîtriser un vocabulaire professionnel spécialisé.',
+                        'chapters' => ['Chapitre 1. Structures avancées (discours indirect, tournures complexes)', 'Chapitre 2. Lexique métier approfondi (finance, tech, RH…)'],
+                        'modalites' => 'Exercices d\'application, grammaire en contexte.'
+                    ],
+                    [
+                        'id' => 3,
+                        'title' => 'Module 3 : Expression orale intensive & interaction',
+                        'duration' => '8h',
+                        'objectives' => 'Développer l’aisance et la spontanéité. Gérer des situations complexes en anglais professionnel.',
+                        'chapters' => ['Chapitre 1. Prise de parole : argumentation, leadership, improvisation', 'Chapitre 2. Jeux de rôle : gestion de conflit, réunions stratégiques'],
+                        'modalites' => 'Ateliers intensifs, retours individualisés.'
+                    ],
+                    [
+                        'id' => 4,
+                        'title' => 'Module 4 : Compréhension de documents complexes',
+                        'duration' => '6h',
+                        'objectives' => 'Comprendre des documents authentiques complexes et développer les capacités d’analyse critique.',
+                        'chapters' => ['Chapitre 1. Articles spécialisés', 'Chapitre 2. Vidéos professionnelles, conférences TED', 'Chapitre 3. Études de cas et synthèse d’informations'],
+                        'modalites' => 'Lecture guidée, visionnage interactif.'
+                    ],
+                    [
+                        'id' => 5,
+                        'title' => 'Module 5 : Rédaction professionnelle stratégique',
+                        'duration' => '6h',
+                        'objectives' => 'Produire des écrits professionnels clairs et efficaces. Maîtriser les codes rédactionnels.',
+                        'chapters' => ['Chapitre 1. Emails et comptes rendus', 'Chapitre 2. Offres, bilans, executive summaries', 'Chapitre 3. Ton, clarté, persuasion et mise en forme'],
+                        'modalites' => 'Rédaction guidée + révisions.'
+                    ],
+                    [
+                        'id' => 6,
+                        'title' => 'Module 6 : Inter culturalité & leadership à l’international',
+                        'duration' => '5h',
+                        'objectives' => 'Comprendre les comportements culturels. Développer son influence en environnement multiculturel.',
+                        'chapters' => ['Chapitre 1. Leadership interculturel', 'Chapitre 2. Gestion de réunion en contexte international', 'Chapitre 3. Adaptation de son style de communication'],
+                        'modalites' => 'Études de cas, jeux de rôle, retours croisés.'
+                    ],
+                    [
+                        'id' => 7,
+                        'title' => 'Module 7 : Préparation certification & entretiens avancés',
+                        'duration' => '5h',
+                        'objectives' => 'Se préparer à des tests avancés ou à des entretiens de haut niveau.',
+                        'chapters' => ['Chapitre 1. TOEIC, IELTS, Linguaskill – stratégies et entraînement', 'Chapitre 2. Simulation d’entretien RH et technique'],
+                        'modalites' => 'Test blanc + feedback individualisé.'
+                    ],
+                    [
+                        'id' => 8,
+                        'title' => 'Module 8 : Mise en pratique continue & consolidation',
+                        'duration' => '13h',
+                        'objectives' => 'Réutiliser les acquis dans des projets réels. Développer la confiance et l’autonomie sur la durée.',
+                        'chapters' => ['Chapitre 1. Projets collaboratifs', 'Chapitre 2. Échanges prolongés', 'Chapitre 3. Études de cas longues', 'Chapitre 4. Présentations finales', 'Chapitre 5. Coaching individuel'],
+                        'modalites' => 'Ateliers immersifs, suivi personnalisé.'
+                    ]
+                ]
+            ],
+
         // Vérifie si la formation demandée existe dans l'URL
         if (!array_key_exists($slug, $courses)) {
             throw $this->createNotFoundException('Cette formation n\'existe pas au catalogue.');
