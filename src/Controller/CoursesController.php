@@ -248,6 +248,102 @@ final class CoursesController extends AbstractController
                 ]
             ],
 
+            // ==========================================
+            // FORMULE BASIC (33H)
+            // ==========================================
+            'basic' => [
+                'ref' => 'ANG-BASIC-0033',
+                'title' => 'Formule Basic',
+                'hours' => 33,
+                'price' => 2500,
+                'description' => 'Développer des compétences linguistiques solides pour être à l’aise dans des échanges professionnels complexes.',
+                'public' => $commonPublic . ' Niveau B1 minimum conseillé.',
+                'modalites' => $commonModalites,
+                'evaluation' => $commonEvaluation,
+                'modules' => [
+                    [
+                        'id' => 1,
+                        'title' => 'Module 1 : Diagnostic et objectifs personnalisés',
+                        'duration' => '1h',
+                        'objectives' => 'Identifier le niveau réel et définir un parcours individualisé.',
+                        'chapters' => ['Chapitre 1. Test de positionnement oral et écrit', 'Chapitre 2. Auto-évaluation commentée', 'Chapitre 3. Entretien pédagogique', 'Chapitre 4. Élaboration d‘un plan d‘apprentissage'],
+                        'modalites' => 'Test écrit + entretien oral + restitution individualisée.'
+                    ],
+                    [
+                        'id' => 2,
+                        'title' => 'Module 2 : Renforcer les bases existantes',
+                        'duration' => '6h',
+                        'objectives' => 'Réviser les fondations grammaticales et enrichir son vocabulaire en contexte.',
+                        'chapters' => ['Chapitre 1. Révisions ciblées (modaux, passif, conditionnels)', 'Chapitre 2. Expressions idiomatiques & transitions', 'Chapitre 3. Vocabulaire thématique (business, technique)'],
+                        'modalites' => 'Exercices pratiques, quiz interactifs, ateliers corrigés.'
+                    ],
+                    [
+                        'id' => 3,
+                        'title' => 'Module 3 : Pratique et mise en situation',
+                        'duration' => '8h',
+                        'objectives' => 'Gagner en fluidité à l’oral et à l’écrit dans un cadre professionnel.',
+                        'chapters' => ['Chapitre 1. Expression orale (débats, négociations, accent)', 'Chapitre 2. Compréhension orale (médias, podcasts)', 'Chapitre 3. Rédaction professionnelle (emails, rapports, contrats)'],
+                        'modalites' => 'Simulations, documents authentiques, corrections personnalisées.'
+                    ],
+                    [
+                        'id' => 4,
+                        'title' => 'Module 4 : Contexte culturel et interculturel',
+                        'duration' => '8h',
+                        'objectives' => 'Comprendre les enjeux culturels et savoir naviguer entre registre pro et informel.',
+                        'chapters' => ['Chapitre 1. Décodage des comportements culturels', 'Chapitre 2. Conversation informelle (switcher les registres)', 'Chapitre 3. Do’s & don’ts à l’international'],
+                        'modalites' => 'Études de cas interculturels, jeux de rôle.'
+                    ],
+                    [
+                        'id' => 5,
+                        'title' => 'Module 5 : Objectif réussite test / entretien',
+                        'duration' => '10h',
+                        'objectives' => 'Préparer un test (TOEIC, IELTS...) et identifier les erreurs persistantes.',
+                        'chapters' => ['Chapitre 1. Entraînement ciblé selon le test choisi', 'Chapitre 2. Simulation d’entretien d’embauche en anglais', 'Chapitre 3. Analyse des erreurs récurrentes'],
+                        'modalites' => 'Tests blancs, mise en situation d’entretien, feedback individuel.'
+                    ]
+                ]
+            ],
+ // ==========================================
+            // FORMULE LIGHT (20H)
+            // ==========================================
+            'light' => [
+                'ref' => 'ANG-LIGHT-0020',
+                'title' => 'Formule Light',
+                'hours' => 20,
+                'price' => 1500,
+                'description' => 'Consolider les bases en anglais écrit et oral et acquérir les compétences linguistiques nécessaires en contexte professionnel.',
+                'public' => 'Professionnels souhaitant un accompagnement court et ciblé. Niveau A1/A2 minimum conseillé.',
+                'modalites' => $commonModalites,
+                'evaluation' => $commonEvaluation,
+                'modules' => [
+                    [
+                        'id' => 1,
+                        'title' => 'Module 1 : Diagnostic & Audit Linguistique',
+                        'duration' => '2h',
+                        'objectives' => 'Identifier les lacunes principales et définir les priorités d’apprentissage.',
+                        'chapters' => ['Chapitre 1. Test de positionnement', 'Chapitre 2. Définition des scénarios métiers prioritaires'],
+                        'modalites' => 'Entretien oral et test de niveau.'
+                    ],
+                    [
+                        'id' => 2,
+                        'title' => 'Module 2 : Réactivation des fondamentaux',
+                        'duration' => '8h',
+                        'objectives' => 'Consolider les bases en anglais écrit et oral.',
+                        'chapters' => ['Chapitre 1. Révision des temps clés', 'Chapitre 2. Vocabulaire essentiel de l\'entreprise', 'Chapitre 3. Les formules de politesse et emails basiques'],
+                        'modalites' => 'Exercices pratiques et mises en situation courtes.'
+                    ],
+                    [
+                        'id' => 3,
+                        'title' => 'Module 3 : Pratique orale ciblée',
+                        'duration' => '10h',
+                        'objectives' => 'Acquérir les compétences linguistiques nécessaires pour un échange quotidien.',
+                        'chapters' => ['Chapitre 1. Se présenter et présenter son activité', 'Chapitre 2. Gérer un appel téléphonique', 'Chapitre 3. Participer à une réunion simple'],
+                        'modalites' => 'Jeux de rôle intensifs.'
+                    ]
+                ]
+            ],
+        ];
+
         // Vérifie si la formation demandée existe dans l'URL
         if (!array_key_exists($slug, $courses)) {
             throw $this->createNotFoundException('Cette formation n\'existe pas au catalogue.');
