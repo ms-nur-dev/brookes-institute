@@ -50,7 +50,7 @@
                         {{ course.price }}€
                     </div>
                     
-                    <ul class="font-sans text-sm space-y-3 mb-10 flex-grow {{ isHighlighted ? 'text-white/80' : 'text-gray-600' }}">
+                    <ul class="font-sans text-sm space-y-3 mb-10 grow {{ isHighlighted ? 'text-white/80' : 'text-gray-600' }}">
                         {% for feature in course.features %}
                             <li class="flex items-start">
                                 <svg class="w-4 h-4 text-secondary mt-1 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 
@@ -63,7 +63,7 @@
                        class="w-full block text-center py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 rounded-sm 
                               {{ isHighlighted 
                                   ? 'bg-secondary hover:bg-white hover:text-primary text-white shadow-lg' 
-                                  : 'border border-primary text-primary hover:bg-secondary hover:text-white hover:border-secondary' 
+                                  : 'border border-primary text-primary hover:bg-primary hover:text-white hover:border-secondary' 
                               }}">
                         Voir le détail
                     </a>
