@@ -4,7 +4,7 @@
             
             <div class="lg:col-span-1">
                 <a href="{{ path('app_home') }}" class="flex items-center mb-6 no-underline">
-                    <img src="{{ asset('images/logo/logo.png') }}" class="w-10 h-auto mr-3" alt="Brookes Institute Logo" />
+                    <img src="{{ asset('images/logo/logo.svg') }}" style="filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.6));" class="w-10 h-auto mr-3" alt="Brookes Institute Logo" />
                     <div class="flex flex-col border-l border-white/20 pl-3">
                         <span class="text-white font-serif text-xl font-bold leading-none uppercase tracking-tight">Brookes</span>
                         <span class="text-secondary font-sans text-[9px] tracking-[0.35em] uppercase font-bold mt-1">Institute</span>
@@ -19,9 +19,9 @@
                 <h4 class="font-sans text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Navigation</h4>
                 <ul class="space-y-4">
                     <li><a href="{{ path('app_home') }}" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Accueil</a></li>
-                    <li><a href="#about" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Notre Expertise</a></li>
-                    <li><a href="#programmes" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Nos Programmes</a></li>
-                    <li><a href="#contact" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Contact</a></li>
+                    <li><a href="{{ path('app_about') }}" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Notre Expertise</a></li>
+                    <li><a href="{{ path('app_courses') }}" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Nos Programmes</a></li>
+                    <li><a href="{{ path('app_contact') }}" class="font-sans text-sm text-white/60 hover:text-secondary transition-colors">Contact</a></li>
                 </ul>
             </div>
 
@@ -38,7 +38,7 @@
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-secondary mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        <span class="font-sans text-sm text-white/60">Paris / Île-de-France<br>Interventions sur site & Visio</span>
+                        <span class="font-sans text-sm text-white/60">02400 Essômes sur marne <br>Interventions sur site & Visio</span>
                     </li>
                 </ul>
             </div>

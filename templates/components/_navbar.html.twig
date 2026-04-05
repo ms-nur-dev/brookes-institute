@@ -1,26 +1,41 @@
-<header x-data="{ scrolled: false, mobileMenuOpen: false }" @scroll.window="scrolled = (window.pageYOffset > 50)" :class="(scrolled && !mobileMenuOpen) ? 'bg-surface backdrop-blur-md shadow-sm border-b border-primary/15 py-2' : 'bg-primary py-3'" class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out">
+<header x-data="{ scrolled: false, mobileMenuOpen: false }" @scroll.window="scrolled = (window.pageYOffset > 50)" :class="(scrolled && !mobileMenuOpen) ? 'bg-surface backdrop-blur-md shadow-sm border-b border-primary/15 py-2' : 'bg-primary py-4'" class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out">
 
 	<div class="px-4 md:px-10 lg:px-14 mx-auto flex items-center justify-between h-16">
 
 		<div class="shrink-0 z-50">
 			<a href="{{ path('app_home') }}" class="flex items-center no-underline group">
-				<div class="relative w-13 h-15 flex items-center justify-center mr-4 transition-transform duration-300 group-hover:scale-105">
-					<img src="{{ asset('images/logo/logo.svg') }}" :class="(!scrolled || mobileMenuOpen) ? 'opacity-100' : 'opacity-0'" style="filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));" class="absolute inset-0 w-full h-full object-contain transition-all duration-500" alt="Brookes Institute"/>
+				<div class="relative w-13 md:w-15 h-13 md:h-15 flex items-center justify-center mr-3 transition-transform duration-300 group-hover:scale-105">
+					<img src="{{ asset('images/logo/logo.svg') }}" :class="(!scrolled || mobileMenuOpen) ? 'opacity-100' : 'opacity-0'" style="filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.5));" class="absolute inset-0 w-full h-full object-contain transition-all duration-500 brightness-0 invert drop-shadow-sm" alt="Brookes Institute"/>
 					<img src="{{ asset('images/logo/logo.svg') }}" :class="(scrolled && !mobileMenuOpen) ? 'opacity-100' : 'opacity-0'" class="absolute inset-0 w-full h-full object-contain transition-all duration-500" alt="Brookes Institute"/>
 				</div>
-
-				<div class="flex flex-col items-center">
-					<span :class="(!scrolled || mobileMenuOpen) ? 'text-surface' : 'text-primary'" class="block font-serif text-2xl font-extrabold uppercase tracking-[0.075em] transition-colors duration-300">Brookes</span>
-					<span class="text-secondary block font-sans text-sm tracking-[0.25em] uppercase font-bold transition-colors duration-300">Institute</span>
+				<div class="flex flex-col items-center justify-center mt-1 transition-transform duration-300 group-hover:translate-x-1">
+					<span :class="(!scrolled || mobileMenuOpen) ? 'text-surface' : 'text-primary'" class="block font-serif text-2xl md:text-[29px] font-extrabold uppercase tracking-wider transition-colors duration-300 leading-none">Brookes</span>
+					<span class="text-secondary block font-sans text-[14px] md:text-[17px] tracking-[0.25em] uppercase font-bold transition-colors duration-300 leading-tight mt-1">Institute</span>
 				</div>
 			</a>
 		</div>
 
+
 		<div class="hidden md:flex items-center space-x-8 xl:space-x-10">
-			<a href="{{ path('app_home') }}" :class="scrolled ? 'text-primary hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">Accueil</a>
-			<a href="{{ path('app_about') }}" :class="scrolled ? 'text-primary/70 hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">À Propos</a>
-			<a href="{{ path('app_courses') }}" :class="scrolled ? 'text-primary/70 hover:text-secondary' : 'text-surface hover:text-secondary'" class="font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300">Formations</a>
-			<a href="{{ path('app_home') }}" :class="scrolled ? 'bg-primary text-surface hover:bg-secondary' : 'bg-secondary text-primary hover:bg-surface'" class="px-7 py-3 font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-all rounded-sm shadow-md hover:-translate-y-0.5">Contact</a>
+
+			<a href="{{ path('app_home') }}" :class="scrolled ? 'text-primary' : 'text-surface'" class="relative group font-sans text-[11px] font-bold uppercase tracking-[0.2em] py-2">
+				<span class="group-hover:text-secondary transition-colors duration-300">Accueil</span>
+				<span :class="scrolled ? 'bg-primary' : 'bg-secondary'" class="absolute bottom-0 left-1/2 w-0 h-0.5 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
+			</a>
+
+			<a href="{{ path('app_about') }}" :class="scrolled ? 'text-primary' : 'text-surface'" class="relative group font-sans text-[11px] font-bold uppercase tracking-[0.2em] py-2">
+				<span class="group-hover:text-secondary transition-colors duration-300">À Propos</span>
+				<span :class="scrolled ? 'bg-primary' : 'bg-secondary'" class="absolute bottom-0 left-1/2 w-0 h-0.5 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
+			</a>
+
+			<a href="{{ path('app_courses') }}" :class="scrolled ? 'text-primary' : 'text-surface'" class="relative group font-sans text-[11px] font-bold uppercase tracking-[0.2em] py-2">
+				<span class="group-hover:text-secondary transition-colors duration-300">Formations</span>
+				<span :class="scrolled ? 'bg-primary' : 'bg-secondary'" class="absolute bottom-0 left-1/2 w-0 h-0.5 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
+			</a>
+
+			<a href="{{ path('app_contact') }}" :class="scrolled ? 'bg-primary text-surface hover:bg-secondary' : 'bg-secondary text-primary hover:bg-surface'" class="px-7 py-3 font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 rounded-sm shadow-md hover:shadow-xl hover:-translate-y-1">
+				Contact
+			</a>
 		</div>
 
 		<button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden z-50 p-2 focus:outline-none bg-transparent" :class="(!scrolled || mobileMenuOpen) ? 'text-surface' : 'text-primary'">
@@ -30,15 +45,26 @@
 			</svg>
 		</button>
 
-		<div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="fixed inset-0 bg-primary z-40 flex flex-col items-center justify-start pt-32 space-y-6 md:hidden" style="display: none;">
+		<div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="fixed inset-0 bg-primary z-40 flex flex-col items-center justify-start pt-32 space-y-8 md:hidden" style="display: none;">
 
-			<a @click="mobileMenuOpen = false" href="{{ path('app_home') }}" class="text-surface text-sm font-sans uppercase tracking-[0.2em] hover:text-secondary transition-colors duration-200">Accueil</a>
-			<a @click="mobileMenuOpen = false" href="{{ path('app_about') }}" class="text-surface text-sm font-sans uppercase tracking-[0.2em] hover:text-secondary transition-colors duration-300">À Propos</a>
-			<a @click="mobileMenuOpen = false" href="{{ path('app_courses') }}" class="text-surface text-sm font-sans uppercase tracking-[0.2em] hover:text-secondary transition-colors duration-300">Formations</a>
+			<a @click="mobileMenuOpen = false" href="{{ path('app_home') }}" class="group relative text-surface text-sm font-sans uppercase tracking-[0.2em] transition-transform duration-300 hover:translate-x-2">
+				<span class="group-hover:text-secondary transition-colors duration-300">Accueil</span>
+				<span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
+			</a>
 
-			<a @click="mobileMenuOpen = false" href="#contact" class="bg-secondary text-primary hover:bg-surface px-8 py-3 mt-2 font-sans text-xs font-bold uppercase tracking-[0.2em] rounded-sm transition-colors duration-300">Contact</a>
+			<a @click="mobileMenuOpen = false" href="{{ path('app_about') }}" class="group relative text-surface text-sm font-sans uppercase tracking-[0.2em] transition-transform duration-300 hover:translate-x-2">
+				<span class="group-hover:text-secondary transition-colors duration-300">À Propos</span>
+				<span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
+			</a>
 
-			<div class="mt-8 pt-6 border-t border-surface/10 w-3/4 flex flex-col items-center">
+			<a @click="mobileMenuOpen = false" href="{{ path('app_courses') }}" class="group relative text-surface text-sm font-sans uppercase tracking-[0.2em] transition-transform duration-300 hover:translate-x-2">
+				<span class="group-hover:text-secondary transition-colors duration-300">Formations</span>
+				<span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
+			</a>
+
+			<a @click="mobileMenuOpen = false" href="{{ path('app_contact') }}" class="bg-secondary text-primary hover:bg-surface px-10 py-4 mt-4 font-sans text-xs font-bold uppercase tracking-[0.2em] rounded-sm transition-colors duration-300 shadow-lg">Contact</a>
+
+			<div class="mt-auto mb-12 pt-6 border-t border-surface/10 w-3/4 flex flex-col items-center">
 				<p class="text-surface/50 font-sans text-[10px] uppercase tracking-[0.2em] mb-3">Contact Direct</p>
 				<a href="tel:+33683179487" class="flex items-center text-surface hover:text-secondary transition-colors group">
 					<svg class="w-4 h-4 mr-3 group-hover:animate-pulse" fill="none" stroke="currentColor" viewbox="0 0 24 24">
